@@ -1,0 +1,5 @@
+Test app which makes get request to the host and gets simple answer. 
+While waiting on answer there is loading screen. 
+If the app starts firstly loads webpage by key"link" else by key "home"
+windows maded with fragments
+All additional tasks done
