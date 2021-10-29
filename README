@@ -3,3 +3,4 @@ While waiting on answer there is loading screen.
 If the app starts firstly loads webpage by key"link" else by key "home"
 windows maded with fragments
 All additional tasks done
+For better picture in video I have added a sleep for 5000 sec to the processes at moment of getting date from server
