@@ -22,6 +22,7 @@ class LoadFragment : Fragment(), LoadView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        presenter = LoadPresenter(requireContext())
 
     }
 
@@ -32,7 +33,6 @@ class LoadFragment : Fragment(), LoadView {
         val view = inflater.inflate(R.layout.fragment_load, container, false)
         view.findViewById<ImageView>(R.id.loadImage)
             .startAnimation(AnimationUtils.loadAnimation(context, R.anim.rotate_anim))
-        presenter = LoadPresenter(requireContext())
 
         presenter.attachView(this)
 
