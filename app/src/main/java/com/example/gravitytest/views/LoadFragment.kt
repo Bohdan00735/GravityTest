@@ -17,7 +17,8 @@ import kotlinx.coroutines.launch
 
 
 class LoadFragment : Fragment(), LoadView {
-    private val presenter = LoadPresenter(requireContext())
+    private lateinit var presenter: LoadPresenter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +32,8 @@ class LoadFragment : Fragment(), LoadView {
         val view = inflater.inflate(R.layout.fragment_load, container, false)
         view.findViewById<ImageView>(R.id.loadImage)
             .startAnimation(AnimationUtils.loadAnimation(context, R.anim.rotate_anim))
+        presenter = LoadPresenter(requireContext())
+
         presenter.attachView(this)
 
         GlobalScope.launch(Dispatchers.IO){ presenter.loadNextView() }

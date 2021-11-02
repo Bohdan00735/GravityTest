@@ -1,6 +1,7 @@
 package com.example.gravitytest.presenters
 
 import android.content.Context
+import android.os.SystemClock
 import com.example.gravitytest.views.LoadView
 import com.example.gravitytest.models.Preferences
 import com.example.gravitytest.models.ServerModel
@@ -23,11 +24,11 @@ class LoadPresenter(context: Context) {
             //get link and load it
             ServerModel().getLink()?.let { view?.loadHomeFragment(it)}
         }else{
-            getHomePath()
+            loadHomePath()
         }
     }
 
-    private fun getHomePath(){
+    private fun loadHomePath(){
         var path = preferences.getHomePath()
         if (path== null){
             path = ServerModel().getHome()
@@ -40,6 +41,7 @@ class LoadPresenter(context: Context) {
             }
         }
         //load page
+        //SystemClock.sleep(5000)
         view?.loadHomeFragment(path)
     }
 }
