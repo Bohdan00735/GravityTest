@@ -1,22 +1,13 @@
-package com.example.gravitytest
+package com.example.gravitytest.views
 
-import android.app.Activity
-import android.content.BroadcastReceiver
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock
 import android.view.WindowManager
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import java.lang.Error
-import android.widget.Toast
 
-import android.content.IntentFilter
-import android.view.View
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.example.gravitytest.FragmentUtil
+import com.example.gravitytest.R
 
 
 class MainActivity : AppCompatActivity() {

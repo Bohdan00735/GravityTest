@@ -1,19 +1,15 @@
-package com.example.gravitytest
+package com.example.gravitytest.views
 
 import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
-import android.net.http.SslCertificate.restoreState
-import android.net.http.SslCertificate.saveState
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import com.example.gravitytest.R
 
 
 class HomeFragment : Fragment() {
@@ -32,12 +28,6 @@ class HomeFragment : Fragment() {
         val root = inflater.inflate(R.layout.fragment_home, container, false)
         webView = root.findViewById(R.id.homeWebView)
         webView.settings.javaScriptEnabled = true
-        class MyWebViewClient : WebViewClient() {
-            override fun shouldOverrideUrlLoading(view: WebView, url: String): Boolean {
-                view.loadUrl(url)
-                return true
-            }
-        }
 
         webView.webViewClient = MyWebViewClient()
         if (savedInstanceState == null){
