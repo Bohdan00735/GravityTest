@@ -30,7 +30,7 @@ class LoadPresenter(context: Context) {
 
     private fun loadHomePath(){
         var path = preferences.getHomePath()
-        if (path== null){
+        if (path == null){
             path = ServerModel().getHome()
             if (path != null){
                 preferences.editHomePath(path)

@@ -8,8 +8,8 @@ import com.example.gravitytest.models.ServerModel
 class DataLoadUseCase {
 
     fun isFirstTime(preferences: Preferences):Boolean {
-        return if (preferences.getInfoAboutStart()) {
-            preferences.editStartInfo(false)
+        return if (!preferences.getInfoAboutStart()) {
+            preferences.editStartInfo(true)
             true
         } else false
     }
